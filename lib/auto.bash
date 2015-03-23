@@ -52,7 +52,7 @@ END
     function make {
       if [ "$#" == 1 ] && [ "$1" == "test" ]; then
         coverage-setup
-        command make
+        command make OPTIMIZE="-O0 --coverage" OTHERLDFLAGS="--coverage"
         local blib
         if [ "$(find blib/arch/ -type f ! -empty)" == "" ]; then
           blib="-l"
