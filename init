@@ -82,7 +82,7 @@ function coverage-setup {
 }
 
 function _coverage-opts {
-  local cover_opts
+  local cover_opts="$COVERAGE_OPTS"
   if perl -mDevel::Cover::Report::Coveralls -e1 2>/dev/null; then
     cover_opts="$cover_opts -report coveralls"
   fi
